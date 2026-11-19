@@ -1,0 +1,23 @@
+# Secrets (never upload)
+application-local.properties
+.env
+.env.*
+!.env.example
+
+# Real data
+backups/
+
+# Build output and dependencies
+node_modules/
+dist/
+target/
+build/
+
+# Editors, OS, logs
+.idea/
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db
+*.log
+HELP.md
