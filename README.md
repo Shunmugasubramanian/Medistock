@@ -1,38 +1,102 @@
-# MediStock
+# 💊 MediStock — Pharmacy Inventory Management System
 
-Role-based pharmacy stock management system.
-Roles: **Admin, Pharmacist, Staff, Supplier**.
+### 🏥 A Full-Stack Pharmacy & Medicine Inventory Management Application
 
-**Features:** inventory and batches, expiry tracking, purchase orders with approval,
-returns, wastage, stock counts, reports, alerts, audit log, backup, and an AI stock advisor.
+MediStock is a full-stack web application designed to simplify pharmacy inventory operations, medicine stock management, and day-to-day workflows through a centralized, user-friendly interface.
 
-**Tech:** Spring Boot 4 (Java 21), MySQL 8, React 19, Vite, Tailwind CSS, JWT authentication.
+Built using **React, Spring Boot, and TiDB Cloud**, MediStock provides a responsive interface, secure authentication, and role-based access to different application features.
 
-## Run on your own computer
-Needs: Java 21, MySQL 8, Node 20+. Nothing is shared with anyone else's database.
+### 🌐 Live Demo
 
-### Backend
-1. Start MySQL.
-2. In `medistock-backend/src/main/resources/`, copy
-   `application-local.properties.example` to `application-local.properties`.
-3. Replace every `CHANGE_ME` (MySQL password, JWT secret, admin password).
-4. Run:
-   ```
-   cd medistock-backend
-   mvn spring-boot:run
-   ```
-   The database, tables and your admin account are created automatically on first start.
+🚀 **[Visit MediStock](https://medistock-frontend-app.netlify.app)**
 
-### Frontend
+> **Note:** The backend is hosted on Render's free tier. The first request may take some time while the server wakes up after inactivity.
+
+---
+
+## ✨ Features
+
+- 🔐 **Authentication** — User registration and login with JWT-based authentication.
+- 👥 **Role-Based Access** — Supports Admin, Pharmacist, Staff, and Supplier roles.
+- 📊 **Dashboard** — Centralized interface for accessing pharmacy operations.
+- 💊 **Medicine Management** — Manage medicine and inventory information.
+- 📦 **Stock Management** — Track and manage available medicine stock.
+- 🏥 **Pharmacy Operations** — Organize inventory-related workflows in one application.
+- 🔒 **Protected Routes** — Restrict access to authenticated users.
+- 📱 **Responsive Design** — User-friendly interface across desktop, tablet, and mobile devices.
+- ☁️ **Cloud Deployment** — Frontend, backend, and database hosted using cloud services.
+
+---
+
+## 🛠️ Technology Stack
+
+| Layer | Technologies |
+|---|---|
+| 🎨 Frontend | React.js, Vite, Tailwind CSS |
+| ⚙️ Backend | Java, Spring Boot |
+| 🔐 Security | Spring Security, JWT, BCrypt |
+| 🗄️ Database | TiDB Cloud (MySQL-compatible) |
+| 🔗 API Communication | REST APIs, Axios |
+| 🌐 Frontend Hosting | Netlify |
+| 🚀 Backend Hosting | Render |
+| ☁️ Database Hosting | TiDB Cloud |
+| 🧑‍💻 Version Control | Git, GitHub |
+
+---
+
+## 🏗️ System Architecture
+
+```text
+                  👤 User
+                     |
+                     ▼
+           🌐 React Frontend
+               (Netlify)
+                     |
+                REST APIs
+                     |
+                     ▼
+          ⚙️ Spring Boot Backend
+                (Render)
+                     |
+                Spring Data JPA
+                     |
+                     ▼
+             🗄️ TiDB Cloud
+                Database
 ```
-cd frontend
-npm install
-npm run dev
-```
-Open http://localhost:5173 and sign in with the admin account from your local file.
-If your backend is not on port 8080, copy `frontend/.env.example` to `frontend/.env`
-and change `VITE_API_URL`.
 
-## Do not upload
-`application-local.properties`, `.env` and the `backups/` folder hold passwords and real data.
-They are git-ignored on purpose.
+---
+
+## 📁 Project Structure
+
+```text
+MediStock/
+│
+├── frontend/              # React + Vite application
+│   ├── public/
+│   ├── src/
+│   ├── package.json
+│   └── vite.config.js
+│
+├── backend/               # Spring Boot REST API
+│   ├── src/
+│   └── pom.xml
+│
+└── README.md
+```
+
+---
+
+## 🚀 Running Locally
+
+### 1️⃣ Clone the Repository
+
+```bash
+git clone https://github.com/Shunmugasubramanian/Medistock.git
+cd Medistock
+```
+
+### 2️⃣ Start the Backend
+
+Navigate to the `backend
