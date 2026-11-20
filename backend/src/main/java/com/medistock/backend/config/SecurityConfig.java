@@ -30,9 +30,10 @@ public class SecurityConfig {
             .csrf(csrf -> csrf.disable())   // safe: no cookies/sessions, the token is sent in a header
             .cors(Customizer.withDefaults())
             .sessionManagement(s -> s.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-            .authorizeHttpRequests(a -> a
-                .requestMatchers("/api/auth/signup", "/api/auth/login",
-                                 "/api/auth/forgot-password", "/api/auth/reset-password").permitAll()
+                .authorizeHttpRequests(a -> a
+                        .requestMatchers(org.springframework.http.HttpMethod.OPTIONS, "/**").permitAll()
+                        .requestMatchers("/api/auth/signup", "/api/auth/login",
+                                "/api/auth/forgot-password", "/api/auth/reset-password").permitAll()
                 .requestMatchers("/error").permitAll()   // so real errors are not hidden behind a 401
                 .anyRequest().authenticated())
             .exceptionHandling(e -> e.authenticationEntryPoint((req, res, ex) -> {
